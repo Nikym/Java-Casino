@@ -14,7 +14,7 @@ public class Blackjack {
 
     // Array that stores the information of the available cards in the deck
     private static final String cards[] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-    private static final String suits[] = {"H", "D", "S", "C"};
+    private static final String suits[] = {"♥", "♦", "♠", "♣"};
     private static final String deck[] = {
             "AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH",
             "AD", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD",
