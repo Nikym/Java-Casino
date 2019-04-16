@@ -4,6 +4,8 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.stream.IntStream;
 
 /**
  * Class containing the rules and functionality for the simple blackjack
@@ -61,8 +63,33 @@ public class Blackjack {
         dealDealerCard();
         System.out.println();
 
+        // 0: Playing, 1: Stay, 2: Bust, 3: Blackjack
+        int[] player_status = new int[number_of_players];
         for (int i = 0; i < number_of_players; i++) {
             dealCard(i);
+            // Set status to playing
+            player_status[i] = 0;
+        }
+
+        Scanner input = new Scanner(System.in);
+        // While there exists a player who is still playing
+        for (int i = 0; i < number_of_players; i++) {
+            // If player is still playing
+            while (player_status[i] == 0) {
+                System.out.print("Buy or Stay? [b/s]: ");
+                String choice = input.next();
+                // If chosen to buy
+                if (choice.equalsIgnoreCase("b")) {
+                    dealCard(i);
+                    if (player_values.get(i) > 21) {
+                        player_status[i] = 2;
+                    } else if (player_values.get(i) == 21) {
+                        player_status[i] = 3;
+                    }
+                } else if (choice.equalsIgnoreCase("s")) {
+                    player_status[i] = 1;
+                }
+            }
         }
     }
 
