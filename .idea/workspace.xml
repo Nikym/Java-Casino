@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fe8a0fb-2218-4f16-a488-e172753dc64b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java" afterPath="$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java" />
-    </list>
+    <list default="true" id="2fe8a0fb-2218-4f16-a488-e172753dc64b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +17,7 @@
           <file leaf-file-name="Blackjack.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="504">
+                <state relative-caret-position="-1242">
                   <caret line="116" column="9" lean-forward="true" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -177,12 +175,12 @@
       <workItem from="1555347072531" duration="17000" />
       <workItem from="1555348248316" duration="119000" />
       <workItem from="1555348426061" duration="7082000" />
-      <workItem from="1555406260294" duration="2590000" />
+      <workItem from="1555406260294" duration="2710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10983000" />
+    <option name="totallyTimeSpent" value="11103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -368,7 +366,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="-1242">
           <caret line="116" column="9" lean-forward="true" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
