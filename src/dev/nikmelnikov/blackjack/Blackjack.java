@@ -40,7 +40,7 @@ public class Blackjack {
      * @param players = integer number of players.
      */
     public Blackjack(int players) throws IllegalArgumentException {
-        if (players < 1) throw new IllegalArgumentException("Players argument must be >= 1");
+        if (players < 1 || players > 7) throw new IllegalArgumentException("Players argument must be >= 1 and < 8");
 
         this.rand = new Random();
         this.dealer_value = 0;
@@ -72,25 +72,43 @@ public class Blackjack {
         }
 
         Scanner input = new Scanner(System.in);
-        // While there exists a player who is still playing
+        // Go through all the players with their choices
         for (int i = 0; i < number_of_players; i++) {
             // If player is still playing
             while (player_status[i] == 0) {
-                System.out.print("Buy or Stay? [b/s]: ");
+                System.out.print("[Player " + i + "] Buy or Stay? [b/s]: ");
                 String choice = input.next();
                 // If chosen to buy
                 if (choice.equalsIgnoreCase("b")) {
                     dealCard(i);
                     if (player_values.get(i) > 21) {
                         player_status[i] = 2;
+                        System.out.println("Player " + i + " is bust!\n");
                     } else if (player_values.get(i) == 21) {
                         player_status[i] = 3;
+                        System.out.println("Player " + i + " has a blackjack!\n");
                     }
                 } else if (choice.equalsIgnoreCase("s")) {
                     player_status[i] = 1;
+                    System.out.println("Player " + i + " chose to stay at " +
+                            player_values.get(i) + "!\n");
                 }
             }
         }
+        // Check for highest number
+        ArrayList<Integer> winners = new ArrayList<>();
+        int highest = 0;
+        for (int i = 0; i < number_of_players; i++) {
+            if (player_values.get(i) > highest && player_values.get(i) < 22) {
+                highest = player_values.get(i);
+                winners.clear();
+                winners.add(i);
+            }
+            else if (player_values.get(i) == highest) {
+                winners.add(i);
+            }
+        }
+        System.out.println("\nWinners are: " + winners);
     }
 
     /**
