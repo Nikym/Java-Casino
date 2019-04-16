@@ -5,7 +5,6 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 /**
  * Class containing the rules and functionality for the simple blackjack
@@ -76,7 +75,7 @@ public class Blackjack {
         for (int i = 0; i < number_of_players; i++) {
             // If player is still playing
             while (player_status[i] == 0) {
-                System.out.print("[Player " + i + "] Buy or Stay? [b/s]: ");
+                System.out.print("[Player " + i + ": " + player_values.get(i) + "] Buy or Stay? [b/s]: ");
                 String choice = input.next();
                 // If chosen to buy
                 if (choice.equalsIgnoreCase("b")) {
@@ -95,7 +94,7 @@ public class Blackjack {
                 }
             }
         }
-        // Check for highest number
+        // Check for highest values from the players
         ArrayList<Integer> winners = new ArrayList<>();
         int highest = 0;
         for (int i = 0; i < number_of_players; i++) {
@@ -108,7 +107,16 @@ public class Blackjack {
                 winners.add(i);
             }
         }
-        System.out.println("\nWinners are: " + winners);
+        // Dealer dealer cards
+        dealDealerCard();
+        if (dealer_value > highest && dealer_value < 22) {
+            System.out.println("Dealer wins.");
+        }
+        else if (dealer_value == highest) {
+            System.out.println("Draw, no one wins.");
+        }
+        else
+            System.out.println("\nWinners are: " + winners);
     }
 
     /**
@@ -149,13 +157,34 @@ public class Blackjack {
      * Method to deal a card to the dealer.
      */
     public void dealDealerCard() {
-        if (dealer_value >= 17) return;
+        if (dealer_value == 0) {
+            String card = deck[rand.nextInt(52)];
+            dealer_hand.add(card);
+            dealer_value += getCardValue(card);
+
+            System.out.println("Dealer dealt a " + card);
+            System.out.println("Total: " + dealer_value);
+            return;
+        }
+        else if (dealer_value > 21) {
+            System.out.println("Dealer is bust!");
+            return;
+        }
+        else if (dealer_value == 21) {
+            System.out.println("Dealer has a blackjack!");
+            return;
+        }
+        else if (dealer_value >= 17) {
+            System.out.println("Dealer stays at " + dealer_value + "!");
+            return;
+        }
         String card = deck[rand.nextInt(52)];
         dealer_hand.add(card);
         dealer_value += getCardValue(card);
 
         System.out.println("Dealer dealt a " + card);
         System.out.println("Total: " + dealer_value);
+        dealDealerCard();
     }
 
     /**
