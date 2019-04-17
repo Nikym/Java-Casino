@@ -69,7 +69,7 @@ public class Blackjack {
         for (int i = 0; i < number_of_players; i++) {
             // If player is still playing
             while (player_status[i] == 0) {
-                System.out.print("[Player " + i + ": " + player_values.get(i) + "] Buy or Stay? [b/s]: ");
+                System.out.print("[Player " + i + ": " + player_values.get(i) + "] " + player_cards.get(i) + "\nBuy or Stay? [b/s]: ");
                 String choice = input.next();
                 // If chosen to buy
                 if (choice.equalsIgnoreCase("b")) {
@@ -120,8 +120,8 @@ public class Blackjack {
      * @return integer value of the card.
      */
     private int getCardValue(String card) {
-        if (card.contains("A")) return 11;
-        else if (card.contains("2")) return 2;
+        // if (card.contains("A")) return 11;
+        if (card.contains("2")) return 2;
         else if (card.contains("3")) return 3;
         else if (card.contains("4")) return 4;
         else if (card.contains("5")) return 5;
@@ -141,7 +141,7 @@ public class Blackjack {
     public void dealCard(int player) {
         String card = cards[rand.nextInt(13)] + suits[rand.nextInt(4)];
         player_cards.get(player).add(card);
-        player_values.set(player, player_values.get(player) + getCardValue(card));
+        player_values.set(player, getHandValue(player_cards.get(player)));
 
         System.out.println("Player " + player + " dealt a " + card);
         System.out.println("Total: " + player_values.get(player));
@@ -154,10 +154,10 @@ public class Blackjack {
         if (dealer_value == 0) {
             String card = cards[rand.nextInt(13)] + suits[rand.nextInt(4)];
             dealer_hand.add(card);
-            dealer_value += getCardValue(card);
+            dealer_value = getHandValue(dealer_hand);
 
             System.out.println("Dealer dealt a " + card);
-            System.out.println("Total: " + dealer_value);
+            System.out.println(dealer_hand + " Total: " + dealer_value);
             return;
         }
         else if (dealer_value > 21) {
@@ -174,10 +174,10 @@ public class Blackjack {
         }
         String card = cards[rand.nextInt(13)] + suits[rand.nextInt(4)];
         dealer_hand.add(card);
-        dealer_value += getCardValue(card);
+        dealer_value = getHandValue(dealer_hand);
 
         System.out.println("Dealer dealt a " + card);
-        System.out.println("Total: " + dealer_value);
+        System.out.println(dealer_hand + " Total: " + dealer_value);
         dealDealerCard();
     }
 
@@ -229,8 +229,21 @@ public class Blackjack {
      */
     private int getHandValue(ArrayList<String> hand) {
         int value = 0;
+        // Creating array to store any aces
+        ArrayList<String> aces = new ArrayList<>();
+        // Count all card excluding aces
         for (String card : hand) {
+            if (card.contains("A")) {
+                aces.add(card);
+                continue;
+            }
             value += getCardValue(card);
+        }
+        // Count aces
+        for (String card : aces) {
+            if (value < 11) {
+                value += 11;
+            } else value += 1;
         }
         return value;
     }

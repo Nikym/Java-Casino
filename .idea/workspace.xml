@@ -19,20 +19,20 @@
       <file leaf-file-name="Blackjack.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            <state relative-caret-position="300">
+              <caret line="122" column="11" lean-forward="false" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6688#6689#0" expanded="true" />
-                <element signature="e#6739#6740#0" expanded="true" />
-                <element signature="e#6900#6901#0" expanded="true" />
-                <element signature="e#6935#6936#0" expanded="true" />
-                <element signature="e#7192#7193#0" expanded="true" />
-                <element signature="e#7239#7240#0" expanded="true" />
-                <element signature="e#7473#7474#0" expanded="true" />
-                <element signature="e#7521#7522#0" expanded="true" />
-                <element signature="e#7560#7561#0" expanded="true" />
-                <element signature="e#7600#7601#0" expanded="true" />
+                <element signature="e#6749#6750#0" expanded="true" />
+                <element signature="e#6800#6801#0" expanded="true" />
+                <element signature="e#6961#6962#0" expanded="true" />
+                <element signature="e#6996#6997#0" expanded="true" />
+                <element signature="e#7253#7254#0" expanded="true" />
+                <element signature="e#7300#7301#0" expanded="true" />
+                <element signature="e#7534#7535#0" expanded="true" />
+                <element signature="e#7582#7583#0" expanded="true" />
+                <element signature="e#7621#7622#0" expanded="true" />
+                <element signature="e#7661#7662#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,12 +202,14 @@
       <workItem from="1555347072531" duration="17000" />
       <workItem from="1555348248316" duration="119000" />
       <workItem from="1555348426061" duration="7082000" />
-      <workItem from="1555406260294" duration="5074000" />
+      <workItem from="1555406260294" duration="5329000" />
+      <workItem from="1555507848174" duration="957000" />
+      <workItem from="1555531836421" duration="901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13467000" />
+    <option name="totallyTimeSpent" value="15580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -253,6 +255,46 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6961#6962#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7253#7254#0" expanded="true" />
+            <element signature="e#7300#7301#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7621#7622#0" expanded="true" />
+            <element signature="e#7661#7662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6961#6962#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7253#7254#0" expanded="true" />
+            <element signature="e#7300#7301#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7621#7622#0" expanded="true" />
+            <element signature="e#7661#7662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -267,16 +309,16 @@
           <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6688#6689#0" expanded="true" />
-            <element signature="e#6739#6740#0" expanded="true" />
-            <element signature="e#6900#6901#0" expanded="true" />
-            <element signature="e#6935#6936#0" expanded="true" />
-            <element signature="e#7192#7193#0" expanded="true" />
-            <element signature="e#7239#7240#0" expanded="true" />
-            <element signature="e#7473#7474#0" expanded="true" />
-            <element signature="e#7521#7522#0" expanded="true" />
-            <element signature="e#7560#7561#0" expanded="true" />
-            <element signature="e#7600#7601#0" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6961#6962#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7253#7254#0" expanded="true" />
+            <element signature="e#7300#7301#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7621#7622#0" expanded="true" />
+            <element signature="e#7661#7662#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -295,16 +337,16 @@
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6688#6689#0" expanded="true" />
-            <element signature="e#6739#6740#0" expanded="true" />
-            <element signature="e#6900#6901#0" expanded="true" />
-            <element signature="e#6935#6936#0" expanded="true" />
-            <element signature="e#7192#7193#0" expanded="true" />
-            <element signature="e#7239#7240#0" expanded="true" />
-            <element signature="e#7473#7474#0" expanded="true" />
-            <element signature="e#7521#7522#0" expanded="true" />
-            <element signature="e#7560#7561#0" expanded="true" />
-            <element signature="e#7600#7601#0" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6961#6962#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7253#7254#0" expanded="true" />
+            <element signature="e#7300#7301#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7621#7622#0" expanded="true" />
+            <element signature="e#7661#7662#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -323,16 +365,16 @@
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6688#6689#0" expanded="true" />
-            <element signature="e#6739#6740#0" expanded="true" />
-            <element signature="e#6900#6901#0" expanded="true" />
-            <element signature="e#6935#6936#0" expanded="true" />
-            <element signature="e#7192#7193#0" expanded="true" />
-            <element signature="e#7239#7240#0" expanded="true" />
-            <element signature="e#7473#7474#0" expanded="true" />
-            <element signature="e#7521#7522#0" expanded="true" />
-            <element signature="e#7560#7561#0" expanded="true" />
-            <element signature="e#7600#7601#0" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6961#6962#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7253#7254#0" expanded="true" />
+            <element signature="e#7300#7301#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7621#7622#0" expanded="true" />
+            <element signature="e#7661#7662#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -351,16 +393,16 @@
           <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6688#6689#0" expanded="true" />
-            <element signature="e#6739#6740#0" expanded="true" />
-            <element signature="e#6900#6901#0" expanded="true" />
-            <element signature="e#6935#6936#0" expanded="true" />
-            <element signature="e#7192#7193#0" expanded="true" />
-            <element signature="e#7239#7240#0" expanded="true" />
-            <element signature="e#7473#7474#0" expanded="true" />
-            <element signature="e#7521#7522#0" expanded="true" />
-            <element signature="e#7560#7561#0" expanded="true" />
-            <element signature="e#7600#7601#0" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6961#6962#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7253#7254#0" expanded="true" />
+            <element signature="e#7300#7301#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7621#7622#0" expanded="true" />
+            <element signature="e#7661#7662#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -380,6 +422,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="122" column="11" lean-forward="false" selection-start-line="122" selection-start-column="11" selection-end-line="122" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6749#6750#0" expanded="true" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6961#6962#0" expanded="true" />
+            <element signature="e#6996#6997#0" expanded="true" />
+            <element signature="e#7253#7254#0" expanded="true" />
+            <element signature="e#7300#7301#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+            <element signature="e#7582#7583#0" expanded="true" />
+            <element signature="e#7621#7622#0" expanded="true" />
+            <element signature="e#7661#7662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -388,34 +457,6 @@
             <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dev/nikmelnikov/blackjack/Blackjack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6688#6689#0" expanded="true" />
-            <element signature="e#6739#6740#0" expanded="true" />
-            <element signature="e#6900#6901#0" expanded="true" />
-            <element signature="e#6935#6936#0" expanded="true" />
-            <element signature="e#7192#7193#0" expanded="true" />
-            <element signature="e#7239#7240#0" expanded="true" />
-            <element signature="e#7473#7474#0" expanded="true" />
-            <element signature="e#7521#7522#0" expanded="true" />
-            <element signature="e#7560#7561#0" expanded="true" />
-            <element signature="e#7600#7601#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
