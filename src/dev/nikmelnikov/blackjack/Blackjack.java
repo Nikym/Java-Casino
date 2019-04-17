@@ -15,12 +15,6 @@ public class Blackjack {
     // Array that stores the information of the available cards in the deck
     private static final String cards[] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     private static final String suits[] = {"♥", "♦", "♠", "♣"};
-    private static final String deck[] = {
-            "AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH",
-            "AD", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD",
-            "AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS",
-            "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC"
-    };
     private Random rand;
 
     // Dealer variables
@@ -34,7 +28,7 @@ public class Blackjack {
 
     /**
      * Class constructor to create a Blackjack game instance with given number of players.
-     * Players value must be more than 0 (ie greater than or equal to 1).
+     * Players value must be more than 0 (ie greater than or equal to 1) and 7 or less.
      *
      * @param players = integer number of players.
      */
@@ -75,7 +69,8 @@ public class Blackjack {
         for (int i = 0; i < number_of_players; i++) {
             // If player is still playing
             while (player_status[i] == 0) {
-                System.out.print("[Player " + i + ": " + player_values.get(i) + "] Buy or Stay? [b/s]: ");
+                System.out.print("[Player " + i + ": " + player_values.get(i) + "] " +
+                        player_cards.get(i) + "\nBuy or Stay? [b/s]: ");
                 String choice = input.next();
                 // If chosen to buy
                 if (choice.equalsIgnoreCase("b")) {
@@ -126,8 +121,8 @@ public class Blackjack {
      * @return integer value of the card.
      */
     private int getCardValue(String card) {
-        if (card.contains("A")) return 11;
-        else if (card.contains("2")) return 2;
+        // if (card.contains("A")) return 11;
+        if (card.contains("2")) return 2;
         else if (card.contains("3")) return 3;
         else if (card.contains("4")) return 4;
         else if (card.contains("5")) return 5;
@@ -144,10 +139,10 @@ public class Blackjack {
      *
      * @param player = Integer ID of a player.
      */
-    public void dealCard(int player) {
-        String card = deck[rand.nextInt(52)];
+    private void dealCard(int player) {
+        String card = cards[rand.nextInt(13)] + suits[rand.nextInt(4)];
         player_cards.get(player).add(card);
-        player_values.set(player, player_values.get(player) + getCardValue(card));
+        player_values.set(player, getHandValue(player_cards.get(player)));
 
         System.out.println("Player " + player + " dealt a " + card);
         System.out.println("Total: " + player_values.get(player));
@@ -156,14 +151,14 @@ public class Blackjack {
     /**
      * Method to deal a card to the dealer.
      */
-    public void dealDealerCard() {
+    private void dealDealerCard() {
         if (dealer_value == 0) {
-            String card = deck[rand.nextInt(52)];
+            String card = cards[rand.nextInt(13)] + suits[rand.nextInt(4)];
             dealer_hand.add(card);
-            dealer_value += getCardValue(card);
+            dealer_value = getHandValue(dealer_hand);
 
             System.out.println("Dealer dealt a " + card);
-            System.out.println("Total: " + dealer_value);
+            System.out.println(dealer_hand + " Total: " + dealer_value);
             return;
         }
         else if (dealer_value > 21) {
@@ -178,12 +173,12 @@ public class Blackjack {
             System.out.println("Dealer stays at " + dealer_value + "!");
             return;
         }
-        String card = deck[rand.nextInt(52)];
+        String card = cards[rand.nextInt(13)] + suits[rand.nextInt(4)];
         dealer_hand.add(card);
-        dealer_value += getCardValue(card);
+        dealer_value = getHandValue(dealer_hand);
 
         System.out.println("Dealer dealt a " + card);
-        System.out.println("Total: " + dealer_value);
+        System.out.println(dealer_hand + " Total: " + dealer_value);
         dealDealerCard();
     }
 
@@ -235,8 +230,19 @@ public class Blackjack {
      */
     private int getHandValue(ArrayList<String> hand) {
         int value = 0;
+        int aces = 0;
+        // Count all card excluding aces
         for (String card : hand) {
+            if (card.contains("A")) {
+                ++aces;
+                continue;
+            }
             value += getCardValue(card);
+        }
+        // Count the ace values
+        for (int i = 0; i < aces; i++) {
+            if (value < 11) value += 11;
+            else value += 1;
         }
         return value;
     }
