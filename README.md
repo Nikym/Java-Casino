@@ -14,7 +14,7 @@ of Blackjack, and accomodates between 1 and 7 players as per standard.
     - [x] Basic player functionality
     - [x] Multi-player functionality
     - [x] Dealer functionality
-    - [ ] Betting functionality
+    - [x] Betting functionality
     - [x] Support for soft-hands (Ace = 1 or 11)
     - [ ] Double-down functionality
     - [ ] Split functionality
