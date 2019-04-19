@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class Blackjack {
 
     // Array that stores the information of the available cards in the deck
-    private static final String cards[] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-    private static final String suits[] = {"♥", "♦", "♠", "♣"};
+    private static final String[] cards = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    private static final String[] suits = {"♥", "♦", "♠", "♣"};
     private Random rand;
 
     // Dealer variables
