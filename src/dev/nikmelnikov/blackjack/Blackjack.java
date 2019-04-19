@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class Blackjack {
 
     // Array that stores the information of the available cards in the deck
-    private static final String cards[] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-    private static final String suits[] = {"♥", "♦", "♠", "♣"};
+    private static final String[] cards = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    private static final String[] suits = {"♥", "♦", "♠", "♣"};
     private Random rand;
 
     // Dealer variables
@@ -24,6 +24,7 @@ public class Blackjack {
     // Player variables
     private ArrayList<ArrayList<String>> player_cards = new ArrayList<>();
     private ArrayList<Integer> player_values = new ArrayList<>();
+    private ArrayList<Integer> player_bets = new ArrayList<>();
     private int number_of_players;
 
     /**
@@ -31,9 +32,13 @@ public class Blackjack {
      * Players value must be more than 0 (ie greater than or equal to 1) and 7 or less.
      *
      * @param players = integer number of players.
+     * @param bets = integer array containing bets of players
      */
-    public Blackjack(int players) throws IllegalArgumentException {
-        if (players < 1 || players > 7) throw new IllegalArgumentException("Players argument must be >= 1 and < 8");
+    public Blackjack(int players, int[] bets) throws IllegalArgumentException {
+        if (players < 1 || players > 7)
+            throw new IllegalArgumentException("Players argument must be >= 1 and < 8");
+        else if (bets.length != players)
+            throw new IllegalArgumentException("Number of bets must match number of players");
 
         this.rand = new Random();
         this.dealer_value = 0;
@@ -46,6 +51,8 @@ public class Blackjack {
             // Create new player hand
             ArrayList<String> hand = new ArrayList<>();
             this.player_cards.add(hand);
+            // Add players bet
+            this.player_bets.add(bets[i]);
         }
     }
 
@@ -56,7 +63,7 @@ public class Blackjack {
         dealDealerCard();
         System.out.println();
 
-        // 0: Playing, 1: Stay, 2: Bust, 3: Blackjack
+        // 0: Playing, 1: Stay, 2: Bust, 3: Blackjack, 4: Above dealer, 5: Equal to dealer
         int[] player_status = new int[number_of_players];
         for (int i = 0; i < number_of_players; i++) {
             dealCard(i);
@@ -89,29 +96,72 @@ public class Blackjack {
                 }
             }
         }
-        // Check for highest values from the players
-        ArrayList<Integer> winners = new ArrayList<>();
-        int highest = 0;
-        for (int i = 0; i < number_of_players; i++) {
-            if (player_values.get(i) > highest && player_values.get(i) < 22) {
-                highest = player_values.get(i);
-                winners.clear();
-                winners.add(i);
-            }
-            else if (player_values.get(i) == highest) {
-                winners.add(i);
-            }
-        }
         // Dealer dealer cards
         dealDealerCard();
-        if (dealer_value > highest && dealer_value < 22) {
-            System.out.println("Dealer wins.");
+        if (dealer_value > 21) {
+            getReturns(player_status, true);
+            System.out.println("Returns: " + player_bets);
+        } else {
+            // Check for highest values from the players
+            ArrayList<Integer> winners = new ArrayList<>();
+            for (int i = 0; i < number_of_players; i++) {
+                if (player_values.get(i) > dealer_value && player_values.get(i) < 22) {
+                    winners.add(i);
+                    if (player_status[i] != 3)
+                        player_status[i] = 4;
+                } else if (player_values.get(i) == dealer_value) {
+                    player_status[i] = 5;
+                }
+            }
+            // If there are no winners
+            if (winners.size() == 0) {
+                System.out.println("Dealer wins.");
+                getReturns(player_status);
+                System.out.println("Returns: " + player_bets);
+            }
+            // If there are winners
+            else {
+                System.out.println("\nWinners are: " + winners);
+                getReturns(player_status);
+                System.out.println("Returns: " + player_bets);
+            }
         }
-        else if (dealer_value == highest) {
-            System.out.println("Draw, no one wins.");
+    }
+
+    /**
+     * Function to get the returns on the player bets.
+     *
+     * @param players = integer array representing player bets.
+     */
+    private void getReturns(int[] players) {
+        getReturns(players,false);
+    }
+
+    /**
+     * Function to get the returns on the player bets.
+     *
+     * @param players = integer array representing player bets.
+     * @param bust = boolean representing if dealer is bust or not.
+     */
+    private void getReturns(int[] players, boolean bust) {
+        // If dealer is bust then award all non-bust players
+        if (bust) {
+            for (int i = 0; i < player_bets.size(); i++) {
+                if (players[i] != 2)
+                    player_bets.set(i, player_bets.get(i) * 2);
+                else
+                    player_bets.set(i, 0);
+            }
         }
-        else
-            System.out.println("\nWinners are: " + winners);
+        // Award all non-bust players who beat dealer
+        for (int i = 0; i < player_bets.size(); i++) {
+            if (players[i] == 4) {
+                player_bets.set(i, player_bets.get(i) * 2);
+            } else if (players[i] == 3)
+                player_bets.set(i, (int) (player_bets.get(i) * 2.5));
+            else if (players[i] != 5)
+                player_bets.set(i, 0);
+        }
     }
 
     /**
